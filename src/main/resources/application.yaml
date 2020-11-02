@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: quartz-1
+  quartz:
+    scheduler-name: scheduler-1
+    job-store-type: jdbc
+    wait-for-jobs-to-complete-on-shutdown: true
+    overwrite-existing-jobs: true
+    properties:
+      org:
+        quartz:
+          dataSource:
+            quartz:
+              URL: jdbc:mysql://www.mybiao.top:3306/quartz?useSSL=false
+              driver: com.mysql.cj.jdbc.Driver
+              username: root
+              password: ",.Rfb8848"
+              provider: hikaricp
+          # scheduler相关
+          scheduler:
+            # scheduler的实例名
+            instanceName: scheduler
+            instanceId: AUTO
+          # 持久化相关
+          jobStore:
+            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+            # 数据保存在内存
+            # class: org.quartz.simpl.RAMJobStore
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+            # 表示数据库中相关表是QRTZ_开头的
+            tablePrefix: QRTZ_
+            useProperties: false
+            dataSource: quartz
+            isClustered: true
+          # 线程池相关
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            # 线程数
+            threadCount: 8
+            # 线程优先级
+            threadPriority: 5
+            threadsInheritContextClassLoaderOfInitializingThread: true
+server:
+  port: 0
+

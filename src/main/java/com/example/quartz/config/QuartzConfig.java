@@ -1,5 +1,7 @@
 package com.example.quartz.config;
 
+import com.example.quartz.schedule.jobs.StartDay;
+import com.example.quartz.schedule.jobs.StatisticJob;
 import org.quartz.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,27 +49,4 @@ public class QuartzConfig {
                 .build();
     }
 
-
-
-    static class StartDay implements Job{
-
-        @Override
-        public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-            log.info("job start_of_day run");
-        }
-    }
-
-    static class StatisticJob implements Job{
-
-        @Override
-        public void execute(JobExecutionContext context) throws JobExecutionException {
-            try {
-                log.info("start execute task");
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            log.info("job2 run complete");
-        }
-    }
 }

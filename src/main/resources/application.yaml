@@ -16,30 +16,30 @@ spring:
               username: root
               password: ",.Rfb8848"
               provider: hikaricp
-          # schedulerÏà¹Ø
+          # schedulerï¿½ï¿½ï¿½
           scheduler:
-            # schedulerµÄÊµÀýÃû
+            # schedulerï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½
             instanceName: scheduler
             instanceId: AUTO
-          # ³Ö¾Ã»¯Ïà¹Ø
+          # ï¿½Ö¾Ã»ï¿½ï¿½ï¿½ï¿½
           jobStore:
             class: org.quartz.impl.jdbcjobstore.JobStoreTX
-            # Êý¾Ý±£´æÔÚÄÚ´æ
+            # ï¿½ï¿½ï¿½Ý±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½
             # class: org.quartz.simpl.RAMJobStore
             driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
-            # ±íÊ¾Êý¾Ý¿âÖÐÏà¹Ø±íÊÇQRTZ_¿ªÍ·µÄ
+            # ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½Ø±ï¿½ï¿½ï¿½QRTZ_ï¿½ï¿½Í·ï¿½ï¿½
             tablePrefix: QRTZ_
             useProperties: false
             dataSource: quartz
             isClustered: true
-          # Ïß³Ì³ØÏà¹Ø
+          # ï¿½ß³Ì³ï¿½ï¿½ï¿½ï¿½
           threadPool:
             class: org.quartz.simpl.SimpleThreadPool
-            # Ïß³ÌÊý
+            # ï¿½ß³ï¿½ï¿½ï¿½
             threadCount: 8
-            # Ïß³ÌÓÅÏÈ¼¶
+            # ï¿½ß³ï¿½ï¿½ï¿½ï¿½È¼ï¿½
             threadPriority: 5
             threadsInheritContextClassLoaderOfInitializingThread: true
 server:
-  port: 0
+  port: 8090
 
